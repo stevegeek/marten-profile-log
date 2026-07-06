@@ -4,7 +4,7 @@ PROFILE=1-gated per-request tracer for [Marten](https://martenframework.com/) th
 
 Inert passthrough when `PROFILE` is unset — safe to ship to production and toggle on-demand.
 
-Production-proven on the Writebook Marten deploy (see deploy notes).
+Production-proven on a Writebook Marten deploy.
 
 ## Install
 
@@ -59,4 +59,4 @@ The split between `pool_wait_*` and `query_exec_total` lets you classify slow re
 
 ## Provenance
 
-Extracted from the Writebook Marten port. The pool-wait timing was the diagnostic that identified heavy-tail outliers (~1100ms) coinciding with `pool_wait_max ≈ 1000ms` on cold TLS connections — pre-warming the pool eliminated them. See deploy notes.
+Extracted from a Writebook Marten port. The pool-wait timing was the diagnostic that identified heavy-tail outliers (~1100ms) coinciding with `pool_wait_max ≈ 1000ms` on cold TLS connections — pre-warming the pool eliminated them.

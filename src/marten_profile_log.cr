@@ -2,7 +2,7 @@ require "marten"
 
 # marten-profile-log — PROFILE=1-gated per-request tracer for Marten that
 # separates PG pool-wait from query-exec time. Inert passthrough when unset.
-# Production-proven on the Writebook Marten deploy (see deploy notes).
+# Production-proven on a Writebook Marten deploy.
 module MartenProfileLog
   VERSION = "0.1.0"
 end

@@ -4,7 +4,7 @@ require "marten"
 # separates PG pool-wait from query-exec time. Inert passthrough when unset.
 # Production-proven on a Writebook Marten deploy.
 module MartenProfileLog
-  VERSION = "0.1.1"
+  VERSION = "0.1.2"
 end
 
 require "./marten_profile_log/profile_log"

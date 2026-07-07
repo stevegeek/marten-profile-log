@@ -1,5 +1,5 @@
 name: marten_profile_log
-version: 0.1.1
+version: 0.1.2
 
 authors:
   - Stephen Ierodiaconou <stevegeek@gmail.com>
@@ -11,8 +11,9 @@ license: MIT
 dependencies:
   marten:
     github: martenframework/marten
-    # Track main (no version tags upstream); consumers pin a commit via override if needed.
-    branch: main
+    # marten publishes no version tags; match marten-smtp-emailing's version-based
+    # requirement so both resolve. Pin an exact commit via shard.override.yml if needed.
+    version: ">= 0.2.0"
 
 development_dependencies:
   sqlite3:

@@ -2,7 +2,7 @@ require "./spec_helper"
 
 describe MartenProfileLog do
   it "has a version" do
-    MartenProfileLog::VERSION.should eq("0.1.0")
+    MartenProfileLog::VERSION.should eq("0.1.1")
   end
 
   it "is disabled when PROFILE is unset" do

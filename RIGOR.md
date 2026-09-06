@@ -14,8 +14,8 @@ and no human has reviewed the code. Statement made by: Stephen Ierodiaconou.**
 ## Notes
 
 marten-profile-log is a per-request tracer for Marten, enabled by PROFILE=1,
-that separates PostgreSQL pool-wait time from query execution time. It was vibe-
-coded: the idea was mine, and an AI planned it, wrote it, tested it and
+that separates PostgreSQL pool-wait time from query execution time. It was
+vibe-coded: the idea was mine, and an AI planned it, wrote it, tested it and
 security-checked it. No human has reviewed the code, which is what `unexamined`
 means.
 

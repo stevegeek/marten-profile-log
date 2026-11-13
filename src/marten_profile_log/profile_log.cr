@@ -96,16 +96,16 @@ module MartenProfileLog
     fiber_id = Fiber.current.object_id
     checkpoints = @@traces.delete(fiber_id)
     tally = @@pool_tallies.delete(fiber_id)
-    breakdown = checkpoints ? checkpoints.map { |c| "#{c[:label]}=#{c[:ms].round(2)}ms" }.join(" ") : ""
+    breakdown = checkpoints ? checkpoints.map { |checkpoint| "#{checkpoint[:label]}=#{checkpoint[:ms].round(2)}ms" }.join(" ") : ""
     pool = tally ? (
       "db_calls=#{tally.calls} " \
       "pool_wait_total=#{tally.wait_total_ms.round(2)}ms " \
       "pool_wait_max=#{tally.wait_max_ms.round(2)}ms " \
       "query_exec_total=#{tally.exec_total_ms.round(2)}ms"
     ) : ""
-    Log.info {
+    Log.info do
       "req path=#{request.path} method=#{request.method} status=#{status} " \
       "total=#{total_ms.round(2)}ms #{breakdown} #{pool}".strip.gsub(/ +/, " ")
-    }
+    end
   end
 end

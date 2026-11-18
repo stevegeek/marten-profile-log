@@ -23,9 +23,9 @@
 class Marten::DB::Connection::Base
   def open(&)
     if MartenProfileLog.enabled?
-      open_instrumented { |c| yield c }
+      open_instrumented { |conn| yield conn }
     else
-      open_original { |c| yield c }
+      open_original { |conn| yield conn }
     end
   end
 

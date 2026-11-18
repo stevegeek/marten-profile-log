@@ -11,7 +11,6 @@ class MartenProfileLog::Middleware < Marten::Middleware
 
     MartenProfileLog.start
     started = Time.instant
-    response : Marten::HTTP::Response? = nil
     begin
       response = get_response.call
       response
